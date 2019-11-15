@@ -1,0 +1,50 @@
+<ion-header >
+  <ion-toolbar color = "primary">
+    <ion-title>Create An Event!</ion-title>
+    <ion-buttons >
+      <ion-button routerLink="/" routerDirection="back">
+        Back
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="content-background" no-bounce>
+  <form  (submit)="addEvent()" class="form-div">
+    <ion-list  >
+      <ion-item >
+        <ion-label position="stacked">Region</ion-label>
+        <ion-select [(ngModel)]="newEvent.type" interface="action-sheet" name="type" >
+          <ion-select-option value="Baton Rouge">Baton Rouge</ion-select-option>
+          <ion-select-option value="New Orleans">New Orleans</ion-select-option>
+          <ion-select-option value="Lafayette">Lafayette</ion-select-option>
+          <ion-select-option value="Houma">Houma</ion-select-option>
+          <ion-select-option value="Slidell">Slidell</ion-select-option>
+          <ion-select-option value="North Louisiana">North Louisiana</ion-select-option>
+          <ion-select-option value="Hammond/Mandeville">Hammond/Mandeville</ion-select-option>
+          <ion-select-option value="Lake Charles">Lake Charles</ion-select-option>
+          <ion-select-option value="Out of State">Out of State</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item >
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input type="text" [(ngModel)]="newEvent.description" name="description"> </ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-label position="stacked">Entry Fee</ion-label>
+        <ion-input type="test" [(ngModel)]="newEvent.cost" name="cost"> </ion-input>
+      </ion-item>
+
+      <ion-item >
+          <ion-label position="stacked">Description</ion-label>
+          <ion-input type="text" [(ngModel)]="newEvent.desc" name="desc"> </ion-input>
+      </ion-item>
+
+      <ion-button  background- expand="full" type="submit" [disabled]="inputCheck()">POST</ion-button>
+    </ion-list>
+
+  </form>
+
+</ion-content>

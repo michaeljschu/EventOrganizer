@@ -1,0 +1,23 @@
+
+
+<!-- <ion-content > -->
+  <ais-instantsearch [config]="config">
+      <ion-header>
+          <ion-toolbar color = "primary">
+            <ion-title>
+              Search
+            </ion-title>
+          </ion-toolbar>
+        </ion-header>
+    <ais-search-box></ais-search-box>
+    <ais-hits>
+      <ng-template let-hits="hits">
+        <ol class="ais-Hits-list">
+          <li *ngFor="let hit of hits" class="ais-Hits-item">
+           {{hit.name}}
+          </li>
+        </ol>
+      </ng-template>
+    </ais-hits>
+  </ais-instantsearch>
+<!-- </ion-content> -->
